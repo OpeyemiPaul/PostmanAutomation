@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "c8b6f2bd-2a8c-4d99-9d99-22c3d14d92c7",
+		"name": "Trello",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2359217"
+	},
+	"item": [
+		{
+			"name": "create a board",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm. environment. clear()\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "pm.environment.unset(\"token\");",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}?name=testing softly&key={{Key}}&token={{Token}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "testing softly"
+						},
+						{
+							"key": "key",
+							"value": "{{Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete a board",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/boards/62a3d3ab67ff7c1f9f7f23b7?key={{Key}}&token={{Token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"boards",
+						"62a3d3ab67ff7c1f9f7f23b7"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetch a board",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://api.trello.com/1/boards/62a3d3ab67ff7c1f9f7f23b7?key={{Key}}&token={{Token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"boards",
+						"62a3d3ab67ff7c1f9f7f23b7"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update a board",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"opeway\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://api.trello.com/1/boards/62a3d3ab67ff7c1f9f7f23b7?key={{Key}}&token={{Token}}",
+					"protocol": "https",
+					"host": [
+						"api",
+						"trello",
+						"com"
+					],
+					"path": [
+						"1",
+						"boards",
+						"62a3d3ab67ff7c1f9f7f23b7"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "{{Key}}"
+						},
+						{
+							"key": "token",
+							"value": "{{Token}}"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Key",
+			"value": "4da43d537f54e6f5a28c201a89f6c6cb"
+		},
+		{
+			"key": "Token",
+			"value": "54a007274304c3734da502f80cbfadfb5a432a17360286acb2128204a9e04e16"
+		},
+		{
+			"key": "baseUrl",
+			"value": "https://api.trello.com/1/boards/"
+		}
+	]
+}
